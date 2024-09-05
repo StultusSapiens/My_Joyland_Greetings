@@ -1,76 +1,32 @@
-/* Container Styles */
+/* Basic Container */
 .container {
     border: 3px solid #333;
     padding: 20px;
     background-color: #1c1c1c;
+    color: white;
 }
 
-/* Card Styles */
+/* Basic Card */
 .card {
     padding: 20px;
     background-color: #2e2e2e;
     border-radius: 10px;
     margin-bottom: 20px;
-    color: #fff;
 }
 
-/* Dialogue Container Styles */
+/* Basic Dialogue Container */
 .dialogue-container {
     background: rgba(30, 30, 30, 0.85);
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
-    position: relative;
-    max-width: 600px;
     text-align: center;
-    animation: fadeIn 2s;
-    margin-bottom: 20px;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-.dialogue-container:before {
-    content: "";
-    position: absolute;
-    bottom: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    border: 10px solid transparent;
-    border-top-color: rgba(30, 30, 30, 0.85);
-}
-
-/* Dialogue Text Styles */
+/* Basic Dialogue Text */
 .dialogue-text {
     font-size: 1.5rem;
-    background: linear-gradient(to right, #6495ed, #1e90ff);
-    -webkit-background-clip: text;
-    color: transparent;
-    background-clip: text;
-    animation: textGlow 3s infinite;
-}
-
-/* Keyframes for Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes textGlow {
-    0%, 100% {
-        filter: drop-shadow(0 0 5px #4682b4);
-    }
-    50% {
-        filter: drop-shadow(0 0 15px #1e90ff);
-    }
-}
-
-/* Responsive Image */
-.responsive-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
+    color: white;
 }
