@@ -1,100 +1,20 @@
-/* Core Styling for Layouts and Containers */
+/* Container Styles */
 .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+    border: 3px solid #333;
     padding: 20px;
-    box-sizing: border-box;
+    background-color: #1c1c1c;
 }
 
-/* Flexbox Helper */
-.flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Core Typography */
-body, p {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    color: #e0e0e0;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    color: #fff;
-    margin-bottom: 15px;
-}
-
-a {
-    color: #1e90ff;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Base Elements */
-button, input, textarea {
-    background-color: #2e2e2e;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
-    font-size: 16px;
-}
-
-button:hover, input:focus {
-    background-color: #3a3a3a;
-    outline: none;
-}
-
-/* Advanced Box Styling */
+/* Card Styles */
 .card {
-    background: #2e2e2e;
-    border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    margin-bottom: 20px;
-}
-
-.card-light {
-    background-color: rgba(30, 30, 30, 0.85);
-}
-
-.card:hover {
-    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
-}
-
-img.responsive-img {
-    max-width: 100%;
-    height: auto;
+    background-color: #2e2e2e;
     border-radius: 10px;
+    margin-bottom: 20px;
+    color: #fff;
 }
 
-/* Text Effects */
-.text-highlight {
-    background: linear-gradient(to right, #6495ed, #1e90ff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-.text-glow {
-    animation: textGlow 3s infinite;
-}
-
-@keyframes textGlow {
-    0%, 100% {
-        filter: drop-shadow(0 0 5px #4682b4);
-    }
-    50% {
-        filter: drop-shadow(0 0 15px #1e90ff);
-    }
-}
-
-/* Dialogue Box Styling */
+/* Dialogue Container Styles */
 .dialogue-container {
     background: rgba(30, 30, 30, 0.85);
     border-radius: 10px;
@@ -117,6 +37,7 @@ img.responsive-img {
     border-top-color: rgba(30, 30, 30, 0.85);
 }
 
+/* Dialogue Text Styles */
 .dialogue-text {
     font-size: 1.5rem;
     background: linear-gradient(to right, #6495ed, #1e90ff);
@@ -126,6 +47,7 @@ img.responsive-img {
     animation: textGlow 3s infinite;
 }
 
+/* Keyframes for Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -137,39 +59,18 @@ img.responsive-img {
     }
 }
 
-/* Utility Classes */
-.text-center {
-    text-align: center;
-}
-
-.margin-bottom-lg {
-    margin-bottom: 30px;
-}
-
-/* Buttons */
-.btn {
-    display: inline-block;
-    padding: 12px 24px;
-    font-size: 1rem;
-    color: #fff;
-    background-color: #1e90ff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #4682b4;
-}
-
-/* Media Queries */
-@media (max-width: 768px) {
-    .container {
-        padding: 10px;
+@keyframes textGlow {
+    0%, 100% {
+        filter: drop-shadow(0 0 5px #4682b4);
     }
-
-    .dialogue-text {
-        font-size: 1.2rem;
+    50% {
+        filter: drop-shadow(0 0 15px #1e90ff);
     }
+}
+
+/* Responsive Image */
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
 }
