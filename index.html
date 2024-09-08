@@ -13,21 +13,20 @@
             padding: 0;
         }
         body, html {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: transparent; /* Make the background transparent */
-    overflow: hidden;
-}
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: transparent;
+            overflow: hidden;
+        }
         .scene {
-            width: 85vw;
-            max-width: 1200px;
-            height: 50vh;
-            min-height: 300px;
+            width: 100%;
+            height: 100%;
             perspective: 1000px;
         }
         .card {
@@ -37,6 +36,7 @@
             transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             transform-style: preserve-3d;
             cursor: pointer;
+            transform: scale(0.95);
         }
         .card-face {
             position: absolute;
@@ -59,11 +59,12 @@
             transform: rotateY(180deg);
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
             padding: 30px;
             color: white;
             font-size: 1.2em;
+            overflow-y: auto;
         }
         .cover-image {
             position: absolute;
@@ -89,9 +90,10 @@
             margin-bottom: 15px;
             text-align: center;
             line-height: 1.6;
+            max-width: 80%;
         }
         .card.flipped {
-            transform: rotateY(180deg);
+            transform: rotateY(180deg) scale(0.95);
         }
         .info-button {
             position: absolute;
@@ -137,7 +139,9 @@
             </div>
             <div class="card-face card-back">
                 <h2>BIOGRAPHY</h2>
-                <p>Lady Elara Thornfield is the enigmatic mistress of Thornfield Manor, a woman shrouded in mystery and quiet elegance. Born into privilege, she carries the burden of her family’s dark legacy, yet her demeanor reflects an unusual softness, a contrast to the cruelty often associated with the Thornfield name. Her striking beauty—marked by raven-black hair and piercing emerald eyes—only enhances her air of untouchability. Though she commands respect in the household, Elara remains an elusive figure, often retreating to the shadows of the estate, where her secrets are safely kept. Whispers suggest she is more than just an observer of the manor's cruel practices, but her true motivations remain a mystery, hidden behind her composed façade.</p>
+                <p>Lady Elara Thornfield is the enigmatic mistress of Thornfield Manor, a woman shrouded in mystery and quiet elegance. Born into privilege, she carries the burden of her family's dark legacy, yet her demeanor reflects an unusual softness, a contrast to the cruelty often associated with the Thornfield name.</p>
+                <p>Her striking beauty—marked by raven-black hair and piercing emerald eyes—only enhances her air of untouchability. Though she commands respect in the household, Elara remains an elusive figure, often retreating to the shadows of the estate, where her secrets are safely kept.</p>
+                <p>Whispers suggest she is more than just an observer of the manor's cruel practices, but her true motivations remain a mystery, hidden behind her composed façade. The depths of her character, like the manor itself, hold untold stories waiting to be unraveled.</p>
             </div>
         </div>
     </div>
@@ -161,7 +165,7 @@
             const tiltX = (y - centerY) / 30;
             const tiltY = (centerX - x) / 30;
 
-            card.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(1.05, 1.05, 1.05)`;
+            card.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(1)`;
 
             // Animate character
             const moveX = (x - centerX) / 25;
@@ -171,7 +175,7 @@
 
         function resetCardPosition() {
             if (!isFlipped) {
-                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(0.95)';
                 characterImage.style.transform = 'scale(1)';
             }
         }
@@ -180,7 +184,7 @@
             isFlipped = !isFlipped;
             card.classList.toggle('flipped');
             if (isFlipped) {
-                card.style.transform = 'rotateY(180deg)';
+                card.style.transform = 'rotateY(180deg) scale(0.95)';
             } else {
                 resetCardPosition();
             }
